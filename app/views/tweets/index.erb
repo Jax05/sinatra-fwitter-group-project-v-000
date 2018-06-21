@@ -3,7 +3,5 @@
 <a href="/logout">Logout</a>
 <h2>Check out these Fweets</h2>
 <%@tweets.each do |tweet|%>
-  <p><a href="/users/<%=tweet.user.slug%>"><strong><%=tweet.user.username%></strong></a> <%=tweet.content%>
-  <a href="/tweets/<%=tweet.id%>">See More</a>
-  <p>
+  <p><%=tweet.user.username%>: <%=tweet.content%><p>
 <%end%>
