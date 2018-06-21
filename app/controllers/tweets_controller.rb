@@ -14,6 +14,7 @@ class TweetsController < ApplicationController
   post '/tweets' do
     if !params[:content].empty?
       tweet = Tweet.new(user_id: current_user.id, content: params[:content])
+      Pry.start
       redirect to '/tweets'
     else
       redirect to '/tweets/new'
