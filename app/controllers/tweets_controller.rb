@@ -26,4 +26,14 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     erb :'tweets/show'
   end
+
+  get '/tweets/:id/edit' do
+    @tweet = Tweet.find(params[:id])
+    if !params[:content].empty?
+      Tweet.update(params)
+      redirect to '/tweets/:id'
+    else
+      redirect to '/tweets/:id/edit'
+    end
+  end
 end
