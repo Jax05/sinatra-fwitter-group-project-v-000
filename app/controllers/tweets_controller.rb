@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     erb :'tweets/edit'
   end
-  
+
   patch '/tweets/:id' do
     @user = current_user
     @tweet = Tweet.find(params[:id])
