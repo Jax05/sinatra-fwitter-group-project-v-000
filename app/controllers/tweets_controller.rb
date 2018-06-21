@@ -48,7 +48,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     if tweet.user_id == current_user.id
       tweet.delete
-      redirect to "/#{@user.slug}"
+      redirect to '/tweets'
     end
   end
 end
