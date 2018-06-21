@@ -30,7 +30,7 @@ class TweetsController < ApplicationController
   get '/tweets/:id/edit' do
     redirect to '/login' if !logged_in?
     @tweet = Tweet.find(params[:id])
-    if tweet.user_id == current_user.id
+    if @tweet.user_id == current_user.id
       erb :'tweets/edit'
     else
       redirect to "/tweets/#{@tweet.id}"
@@ -50,7 +50,7 @@ class TweetsController < ApplicationController
   delete '/tweets/:id' do
     redirect to '/login' if !logged_in?
     @tweet = Tweet.find(params[:id])
-    if tweet.user_id == current_user.id
+    if @tweet.user_id == current_user.id
       tweet.delete
       redirect to '/tweets'
     end
