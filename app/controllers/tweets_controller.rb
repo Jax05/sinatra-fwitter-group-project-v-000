@@ -32,6 +32,8 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     if tweet.user_id == current_user.id
       erb :'tweets/edit'
+    else
+      redirect to "/tweets/#{@tweet.id}"
     end
   end
 
