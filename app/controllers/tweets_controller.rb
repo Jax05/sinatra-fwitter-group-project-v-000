@@ -20,4 +20,8 @@ class TweetsController < ApplicationController
       redirect to '/tweets/new'
     end
   end
+
+  get '/tweets/:id' do
+    erb :'tweets/show'
+  end
 end
