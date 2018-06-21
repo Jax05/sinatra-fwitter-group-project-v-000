@@ -37,9 +37,9 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     if !params[:content].empty?
       @tweet.update(content: params[:content])
-      redirect to '/tweets/:id'
+      redirect to '/tweets/#{@tweet.id}'
     else
-      redirect to '/tweets/:id/edit'
+      redirect to '/tweets/#{@tweet.id}/edit'
     end
   end
 end
