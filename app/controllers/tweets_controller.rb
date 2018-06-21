@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     erb :'tweets/edit'
   end
-  
+
   patch '/tweets/:id' do
     @tweet = Tweet.find(params[:id])
     if !params[:content].empty?
