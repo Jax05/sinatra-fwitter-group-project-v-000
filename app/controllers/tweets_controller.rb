@@ -54,7 +54,7 @@ class TweetsController < ApplicationController
       tweet.delete
       redirect to '/tweets'
     else
-      redirect to "/tweets/#{@tweet.id}/edit"
+      redirect to "/tweets/#{@tweet.id}"
     end
   end
 end
