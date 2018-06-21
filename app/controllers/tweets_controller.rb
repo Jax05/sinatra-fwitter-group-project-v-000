@@ -28,6 +28,7 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/:id/edit' do
+    redirect to '/login' if !logged_in?
     @tweet = Tweet.find(params[:id])
     if !params[:content].empty?
       Tweet.update(params)
