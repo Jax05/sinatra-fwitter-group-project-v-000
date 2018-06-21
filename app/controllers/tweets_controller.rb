@@ -53,6 +53,8 @@ class TweetsController < ApplicationController
     if @tweet.user_id == current_user.id
       tweet.delete
       redirect to '/tweets'
+    else
+      redirect to "/tweets/#{@tweet.id}/edit"
     end
   end
 end
